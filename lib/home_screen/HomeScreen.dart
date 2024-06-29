@@ -28,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: InkWell(
           onTap: (){
             setState(() {
-              randomNumber = Random().nextInt(6) ;
+              randomNumber = Random().nextInt(6) + 1 ;
             });
           },
           child: SizedBox(
@@ -37,7 +37,8 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Image.asset(
               fit: BoxFit.contain,
               randomNumber == null ? "assets/images/button.png":
-              dices[randomNumber!],
+                  "assets/images/d$randomNumber.png", ///Simple method
+             // dices[randomNumber!], // List Method
             ),
           ),
         )
